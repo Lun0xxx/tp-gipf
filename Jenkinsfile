@@ -1,10 +1,30 @@
 pipeline {
 	agent any
 
-	stage('Gradle Build') {}
+	stage('Gradle Build') {
+		steps {
+			sh 'gradle build'
+		}
+	}
 
-	stage('Gradle Check') {}
-	
+	stage('Gradle Run') {
+		steps {
+			sh 'gradle run'
+		}
+	}
+
+	stage('Gradle Check') {
+		steps {
+			sh 'gradle check'
+		}
+	}
+
+	stage('Gradle Clean') {
+		steps {
+			sh 'gradle clean'
+		}
+	}
+
 	stage('Sonarqube Check') {}
 
 	post {}
