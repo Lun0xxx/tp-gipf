@@ -26,17 +26,11 @@ pipeline {
 			}
 		}
 
-		/*stage('Run Sonarqube') {
-            		environment {
-                		scannerHome = tool 'lil-sonar-tool';
-            		}
-            		
+		stage('Gradle Sonar') {
 			steps {
-              			withSonarQubeEnv(credentialsId: 'lil-sonar-credentials', installationName: 'lil sonar installation') {
-                			sh "${scannerHome}/bin/sonar-scanner"
-              			}
-            		}
-        	}*/
+				./gradlew sonar -Dsonar.projectKey=SonarQubeProjectKey -Dsonar.projectName='SonarQube' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_2424e13d0b464b6940a72fb83061fa23746e0293
+			}
+		}
 	}
 
 	post {
