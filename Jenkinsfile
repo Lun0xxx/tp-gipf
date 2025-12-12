@@ -4,7 +4,7 @@ pipeline {
 	stages {
 		stage('Fetch Git') {
 			steps {
-				git branch: 'Master', url: 'https://github.com/Lun0xxx/tp-gipf.git'
+				git branch: 'master', url: 'https://github.com/Lun0xxx/tp-gipf.git'
 			}
 		}
 
