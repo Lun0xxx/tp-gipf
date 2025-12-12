@@ -10,25 +10,25 @@ pipeline {
 
 		stage('Gradle Build') {
 			steps {
-				sh './gradlew build'
+				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 build'
 			}	
 		}
 
 		stage('Gradle Run') {
 			steps {
-				sh './gradlew run'
+				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 run'
 			}
 		}
 
 		stage('Gradle Check') {
 			steps {
-				sh './gradlew check'
+				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 check'
 			}
 		}
 
 		stage('Gradle Clean') {
 			steps {
-				sh './gradlew clean'
+				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 clean'
 			}
 		}
 	}
