@@ -2,6 +2,12 @@ pipeline {
 	agent any
 	
 	stages {
+		stage('Fetch Git') {
+			steps {
+				git branch 'Master' : 'https://github.com/Lun0xxx/tp-gipf.git'
+			}
+		}
+
 		stage('Gradle Build') {
 			steps {
 				sh 'gradle build'
