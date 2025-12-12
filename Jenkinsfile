@@ -14,12 +14,6 @@ pipeline {
 			}	
 		}
 
-		stage('Gradle Run') {
-			steps {
-				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 run -x test'
-			}
-		}
-
 		stage('Gradle Check') {
 			steps {
 				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 check -x test'
