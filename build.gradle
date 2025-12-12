@@ -11,6 +11,7 @@
 plugins {
     id 'org.liquibase.gradle' version '2.2.0'
     id 'application'
+    id "org.sonarqube" version "7.2.0.6526"
 //    id 'jacoco'
 }
 // Apply the java plugin to add support for Java
@@ -18,6 +19,13 @@ apply plugin: 'java'
 
 application {
     mainClass = 'src/main/java/gipf/Main.java'
+}
+
+sonar {
+  properties {
+    property "sonar.projectKey", "SonarQubeProjectKey"
+    property "sonar.projectName", "SonarQube"
+  }
 }
 
 /*jacocoTestReport {
