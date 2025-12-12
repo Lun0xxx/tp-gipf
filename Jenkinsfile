@@ -28,7 +28,7 @@ pipeline {
 
 		stage('Gradle Sonar') {
 			steps {
-				sh './gradlew sonar -Dsonar.projectKey=SonarQubeProjectKey -Dsonar.projectName='SonarQube' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_2424e13d0b464b6940a72fb83061fa23746e0293'
+				sh './gradlew sonar -Dsonar.projectKey=SonarQubeProjectKey -Dsonar.projectName=SonarQube -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_2424e13d0b464b6940a72fb83061fa23746e0293'
 			}
 		}
 	}
