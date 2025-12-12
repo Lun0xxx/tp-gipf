@@ -1,31 +1,33 @@
 pipeline {
 	agent any
-
-	stage('Gradle Build') {
-		steps {
-			sh 'gradle build'
+	
+	stages {
+		stage('Gradle Build') {
+			steps {
+				sh 'gradle build'
+			}	
 		}
-	}
 
-	stage('Gradle Run') {
-		steps {
-			sh 'gradle run'
+		stage('Gradle Run') {
+			steps {
+				sh 'gradle run'
+			}
 		}
-	}
 
-	stage('Gradle Check') {
-		steps {
-			sh 'gradle check'
+		stage('Gradle Check') {
+			steps {
+				sh 'gradle check'
+			}
 		}
-	}
 
-	stage('Gradle Clean') {
-		steps {
-			sh 'gradle clean'
+		stage('Gradle Clean') {
+			steps {
+				sh 'gradle clean'
+			}
 		}
+
+		stage('Sonarqube Check') {}
+
+		post {}
 	}
-
-	stage('Sonarqube Check') {}
-
-	post {}
 }
