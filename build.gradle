@@ -10,10 +10,30 @@
 
 plugins {
     id 'org.liquibase.gradle' version '2.2.0'
+    id 'application'
+    id 'jacoco'
 }
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 
+application {
+    mainClass = 'src/main/java/gipf/Main.java'
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
+jacoco {
+    applyTo run
+}
+
+tasks.register('applicationCodeCoverageReport', JacocoReport) {
+    executionData run
+    sourceSets sourceSets.main
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
