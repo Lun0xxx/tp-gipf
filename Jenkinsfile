@@ -20,12 +20,6 @@ pipeline {
 			}
 		}
 
-		stage('Gradle Clean') {
-			steps {
-				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 clean -x test'
-			}
-		}
-
 		stage('Gradle Sonar') {
 			steps {
 				sh './gradlew sonar -Dsonar.projectKey=SonarQubeProjectKey -Dsonar.projectName=SonarQube -Dsonar.host.url=http://172.17.0.3:9000 -Dsonar.token=sqp_2424e13d0b464b6940a72fb83061fa23746e0293'
