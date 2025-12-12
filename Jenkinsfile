@@ -27,5 +27,17 @@ pipeline {
 		}
 	}
 
-	post {}
+	post {
+		always {
+			echo 'Pipeline terminée'
+		}
+		
+		success {
+			echo 'Terminée avec succès'
+		}
+		
+		failure {
+			echo 'Terminée avec un/des erreur(s)'
+		}
+	}
 }
