@@ -25,9 +25,7 @@ pipeline {
 				sh 'gradle clean'
 			}
 		}
-
-		stage('Sonarqube Check') {}
-
-		post {}
 	}
+
+	post {}
 }
