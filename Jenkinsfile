@@ -8,13 +8,13 @@ pipeline {
 			}
 		}
 
-		/*stage('Gradle Build') {
+		stage('Gradle Build') {
 			steps {
 				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 build'
 			}	
 		}
 
-		stage('Gradle Run') {
+		/*stage('Gradle Run') {
 			steps {
 				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 run'
 			}
