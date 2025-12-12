@@ -25,6 +25,18 @@ pipeline {
 				sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 clean -x test'
 			}
 		}
+
+		/*stage('Run Sonarqube') {
+            		environment {
+                		scannerHome = tool 'lil-sonar-tool';
+            		}
+            		
+			steps {
+              			withSonarQubeEnv(credentialsId: 'lil-sonar-credentials', installationName: 'lil sonar installation') {
+                			sh "${scannerHome}/bin/sonar-scanner"
+              			}
+            		}
+        	}*/
 	}
 
 	post {
