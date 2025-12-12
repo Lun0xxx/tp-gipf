@@ -10,25 +10,25 @@ pipeline {
 
 		stage('Gradle Build') {
 			steps {
-				sh 'gradle build'
+				sh 'gradlew build'
 			}	
 		}
 
 		stage('Gradle Run') {
 			steps {
-				sh 'gradle run'
+				sh 'gradlew run'
 			}
 		}
 
 		stage('Gradle Check') {
 			steps {
-				sh 'gradle check'
+				sh 'gradlew check'
 			}
 		}
 
 		stage('Gradle Clean') {
 			steps {
-				sh 'gradle clean'
+				sh 'gradlew clean'
 			}
 		}
 	}
